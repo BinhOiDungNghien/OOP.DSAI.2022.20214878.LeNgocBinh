@@ -1,0 +1,14 @@
+We avoid using Getter and Setter because
+- Java Beans can be built without getters and setters.
+The introspection-based idiom is being improved in Java 1.5.
+
+- Accessors are acceptable when methods return objects in terms of interfaces.
+
+- Accessors complicate code and make maintenance more difficult.
+
+- Getter and setter methods violate encapsulation.
+
+- Getter and setter methods are not particular object-oriented.
+
+- Numerous getter and setter methods can indicate poor design from an OO perspective.
+
