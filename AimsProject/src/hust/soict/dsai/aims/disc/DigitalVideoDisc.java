@@ -1,4 +1,4 @@
-package lab02;
+package AimsProject.src.hust.soict.dsai.aims.disc;
 
 public class DigitalVideoDisc {
     private String title;
@@ -6,9 +6,17 @@ public class DigitalVideoDisc {
     private String director;
     private int length;
     private float cost;
+    private static int nbDigitalVideoDiscs = 0;
+    private int id;
 
     public DigitalVideoDisc(String title) {
         this.title = title;
+        DigitalVideoDisc.nbDigitalVideoDiscs++;
+        this.id = DigitalVideoDisc.nbDigitalVideoDiscs;
+    }
+
+    public int getId() {
+        return this.id;
     }
 
     public DigitalVideoDisc(String category, String title, float cost) {
@@ -31,7 +39,7 @@ public class DigitalVideoDisc {
         return this.title;
     }
 
-    public void setTitile(String title) {
+    public void setTitle(String title) {
         this.title = title;
     }
 
@@ -66,4 +74,11 @@ public class DigitalVideoDisc {
     public void setDirector(String director) {
         this.director = director;
     }
+
+    public String toString() {
+        String res = String.format("%d. DVD - [%s] - [%s] - [%s] - [%d]: [%f] $ \n", this.id, this.title, this.category,
+                this.director, this.length, this.cost);
+        return res;
+    }
+
 }
