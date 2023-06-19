@@ -10,7 +10,7 @@ public class ConcatenationInLoops {
         for (int i = 0; i < 65536; i++) {
             s += r.nextInt(2);
         }
-        System.out.println(System.currentTimeMillis() - start); // This prints noughly 4599.
+        System.out.println(System.currentTimeMillis() - start); // This prints roughly 4599.
 
         r = new Random(123);
         start = System.currentTimeMillis();

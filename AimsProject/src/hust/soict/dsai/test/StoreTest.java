@@ -1,22 +1,31 @@
-package AimsProject.src.hust.soict.dsai.test;
+package hust.soict.dsai.test;
 
-import AimsProject.src.hust.soict.dsai.aims.disc.DigitalVideoDisc;
-import AimsProject.src.hust.soict.dsai.aims.store.Store;
+import hust.soict.dsai.aims.media.DigitalVideoDisc;
+import hust.soict.dsai.aims.media.Store;
 
 public class StoreTest {
-    public static void main(String[] args) {
-        Store store = new Store();
+	public static void main(String[] args) {
+		//Create the store
+		Store myStore = new Store();
 
-        DigitalVideoDisc dvd1 = new DigitalVideoDisc("Spiderman", "Animation", "Roger Allers", 87, 19.95f);
-        store.addDVD(dvd1);
+		//Create DVDs
+		DigitalVideoDisc dvd1 = new DigitalVideoDisc("The Lion King", "Animation", "Roger Allers", 87, 19.95f);
+		DigitalVideoDisc dvd2 = new DigitalVideoDisc("Star Wars", "Science Fiction", "George Lucas", 87, 24.95f);
+		DigitalVideoDisc dvd3 = new DigitalVideoDisc("Aladin", "Animation", 18.99f);
 
-        DigitalVideoDisc dvd2 = new DigitalVideoDisc("Gone with the wind", "Romantic", "George Lucas", 87, 24.95f);
-        store.addDVD(dvd2);
+		//Try adding DVDs
+//		myStore.addMedia(dvd2, 5);
+		myStore.addMedia(dvd2);
+		myStore.addMedia(dvd1);
+		myStore.addMedia(dvd3);
+		myStore.addMedia(dvd1);
+		myStore.addMedia(dvd1);
+		myStore.listItems();
 
-        store.getItems();
-
-        System.out.println("After remove dvd1");
-        store.removeDVD(dvd1);
-        store.getItems();
-    }
+		//Try removing DVDs
+//		myStore.removeMedia(dvd1, 2);
+		myStore.removeMedia(dvd3);
+		myStore.removeMedia(dvd1);
+		myStore.listItems();
+	}
 }
